@@ -54,35 +54,38 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card
-              key={index}
-              className="overflow-hidden border-morocco-prairie bg-morocco-charcoal-light hover:shadow-lg transition-shadow"
-            >
-              <div className="h-48 overflow-hidden">
-                <img
-                  src={service.image || "/placeholder.svg"}
-                  alt={service.title}
-                  className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-2xl text-morocco-amber">{service.title}</CardTitle>
-                <CardDescription className="text-base text-morocco-givry">{service.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 text-white">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <Check className="mr-2 h-5 w-5 text-morocco-copper flex-shrink-0" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
+        {/* Replace the existing grid div with this new structure */}
+        <div className="catering-services-container mx-auto">
+          <div className="catering-services-grid grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className="catering-service-card overflow-hidden border-morocco-prairie bg-morocco-charcoal-light hover:shadow-lg transition-shadow"
+              >
+                <div className="h-48 overflow-hidden">
+                  <img
+                    src={service.image || "/placeholder.svg"}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  />
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-2xl text-morocco-amber">{service.title}</CardTitle>
+                  <CardDescription className="text-base text-morocco-givry">{service.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 text-white">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start">
+                        <Check className="mr-2 h-5 w-5 text-morocco-copper flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Call to Action */}

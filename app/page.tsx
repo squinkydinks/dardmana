@@ -9,6 +9,7 @@ import { HeroSection } from "@/components/hero-section"
 import { InstagramGallery } from "@/components/instagram-gallery"
 import { ServicesSection } from "@/components/services-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
+import { PrefetchManager } from "@/components/prefetch-manager"
 import generateStructuredData from "./structured-data"
 import generateReviewStructuredData from "./review-structured-data"
 
@@ -53,6 +54,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
+      <PrefetchManager />
       <Header />
       <HeroSection />
       <AboutSection />

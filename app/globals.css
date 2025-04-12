@@ -91,6 +91,29 @@
   }
 }
 
+/* Update the specific styles for catering services to set width on mobile/tablets */
+.catering-services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Add this new container class for width control */
+.catering-services-container {
+  width: 75%;
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .catering-services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Reset to full width on desktop */
+  .catering-services-container {
+    width: 100%;
+  }
+}
+
 .testimonial-carousel .slick-dots li button:before {
   @apply text-morocco-salmon;
 }

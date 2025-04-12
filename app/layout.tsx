@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Montserrat, Playfair_Display } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { DataProvider } from "@/components/data-provider"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -92,7 +93,7 @@ export default function RootLayout({
       </head>
       <body className={`${montserrat.variable} ${playfair.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          {children}
+          <DataProvider>{children}</DataProvider>
         </ThemeProvider>
       </body>
     </html>
