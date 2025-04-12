@@ -97,9 +97,9 @@
   grid-template-columns: 1fr;
 }
 
-/* Add this new container class for width control */
+/* Change the width from 75% to 90% */
 .catering-services-container {
-  width: 75%;
+  width: 90%;
   max-width: 100%;
 }
 
@@ -111,6 +111,27 @@
   /* Reset to full width on desktop */
   .catering-services-container {
     width: 100%;
+  }
+}
+
+/* Add responsive styles for menu navigation */
+@media (max-width: 767px) {
+  /* Ensure menu navigation buttons are properly sized and spaced on mobile */
+  .cuisine-menu-navigation {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .cuisine-menu-navigation::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+
+  /* Prevent zoom issues on mobile */
+  .dark-menu-pattern-2 {
+    overflow-x: hidden;
+    max-width: 100vw;
   }
 }
 

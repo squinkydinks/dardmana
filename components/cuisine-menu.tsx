@@ -4,6 +4,7 @@ import { useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
+import { useMediaQuery } from "@/hooks/use-media-query"
 
 // Menu data
 const menuData = {
@@ -229,6 +230,7 @@ type CuisineType = "moroccan" | "italian" | "french" | "spanish"
 
 export function CuisineMenu() {
   const [activeCuisine, setActiveCuisine] = useState<CuisineType>("moroccan")
+  const isDesktop = useMediaQuery("(min-width: 768px)")
 
   const cuisines: CuisineType[] = ["moroccan", "italian", "french", "spanish"]
   const currentIndex = cuisines.indexOf(activeCuisine)
@@ -248,13 +250,16 @@ export function CuisineMenu() {
       {/* Menu Navigation */}
       <div className="flex justify-center mb-10 items-center">
         <div className="flex items-center space-x-4">
-          <button
-            onClick={goToPrev}
-            className="bg-morocco-charcoal/80 rounded-full p-2.5 shadow-md hover:bg-morocco-charcoal focus:outline-none focus:ring-2 focus:ring-morocco-amber/50 z-10"
-            aria-label="Previous menu"
-          >
-            <ChevronLeft className="h-5 w-5 text-morocco-amber" />
-          </button>
+          {/* Only show arrows on desktop */}
+          {isDesktop && (
+            <button
+              onClick={goToPrev}
+              className="bg-morocco-charcoal/80 rounded-full p-2.5 shadow-md hover:bg-morocco-charcoal focus:outline-none focus:ring-2 focus:ring-morocco-amber/50 z-10"
+              aria-label="Previous menu"
+            >
+              <ChevronLeft className="h-5 w-5 text-morocco-amber" />
+            </button>
+          )}
 
           <div className="flex space-x-4 md:space-x-8 overflow-x-auto">
             {cuisines.map((cuisine) => (
@@ -273,13 +278,16 @@ export function CuisineMenu() {
             ))}
           </div>
 
-          <button
-            onClick={goToNext}
-            className="bg-morocco-charcoal/80 rounded-full p-2.5 shadow-md hover:bg-morocco-charcoal focus:outline-none focus:ring-2 focus:ring-morocco-amber/50 z-10"
-            aria-label="Next menu"
-          >
-            <ChevronRight className="h-5 w-5 text-morocco-amber" />
-          </button>
+          {/* Only show arrows on desktop */}
+          {isDesktop && (
+            <button
+              onClick={goToNext}
+              className="bg-morocco-charcoal/80 rounded-full p-2.5 shadow-md hover:bg-morocco-charcoal focus:outline-none focus:ring-2 focus:ring-morocco-amber/50 z-10"
+              aria-label="Next menu"
+            >
+              <ChevronRight className="h-5 w-5 text-morocco-amber" />
+            </button>
+          )}
         </div>
       </div>
 

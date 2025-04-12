@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function MenuPage() {
   return (
-    <main className="min-h-screen dark-menu-pattern-2 text-white">
+    <main className="min-h-screen dark-menu-pattern-2 text-white overflow-hidden">
       <Header />
 
       <section className="pt-32 pb-20">
