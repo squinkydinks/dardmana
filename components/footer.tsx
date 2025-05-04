@@ -89,7 +89,7 @@ export function Footer() {
               <p>Los Angeles, CA 90036</p>
               <p>Phone: (310) 993-7440</p>
               <p>Phone: (310) 779-5691</p>
-              <p>Email: dardmana2025@gmail.com</p>
+              <p>Email: info@dardmana.com</p>
             </address>
           </div>
         </div>
